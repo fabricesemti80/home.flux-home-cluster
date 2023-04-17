@@ -30,9 +30,9 @@ spec:
     cloudflared:
       tunnel: 751f5d58-949b-4088-8b53-348d5f85c11a
       ingress:
-        - hostname: "tunnel.${SECRET_DOMAIN}" # tunnel.example.com
+        - hostname: tunnel.fabricesemti.net # tunnel.example.com
           service: http://web-service:80
-        - hostname: "hello.${SECRET_DOMAIN}"
+        - hostname: hello.fabricesemti.net
           service: hello_world
         # - hostname: chat.akchristiansen.com
         #   service: http://mattermost-team-edition.default.svc.cluster.local:8065
