@@ -45,7 +45,7 @@ tasks:
         prettier
         sops
         stern
-        tfsenv
+        tfenv
         tflint
         weaveworks/tap/gitops
         yamllint
