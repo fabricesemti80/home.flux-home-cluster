@@ -36,7 +36,7 @@ spec:
             noTLSVerify: true
         # - hostname: tunnel.fabricesemti.net # tunnel.example.com
         #   service: http://web-service:80
-        - hostname: test.fabricesemti.net
+        - hostname: 10.0.0.201 #test.fabricesemti.net
           service: hello_world
         # - hostname: chat.akchristiansen.com
         #   service: http://mattermost-team-edition.default.svc.cluster.local:8065
