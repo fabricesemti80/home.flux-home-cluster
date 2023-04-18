@@ -28,7 +28,7 @@ spec:
     keepHistory: false
   values:
     cloudflared:
-      tunnel: 751f5d58-949b-4088-8b53-348d5f85c11a
+      tunnel: b605e9b7-5647-47fc-9af4-a24904bf05d2 #? cloudflared tunnel list
       ingress:
         - hostname: "*.fabricesemti.net"
           service: https://ingress-nginx-controller.networking
