@@ -31,12 +31,12 @@ spec:
       tunnel: b605e9b7-5647-47fc-9af4-a24904bf05d2 #? cloudflared tunnel list
       ingress:
         - hostname: "*.fabricesemti.net"
-          service: https://ingress-nginx-controller.networking
+          service: 10.0.0.201 #https://ingress-nginx-controller.networking
           originRequest:
             noTLSVerify: true
         # - hostname: tunnel.fabricesemti.net # tunnel.example.com
         #   service: http://web-service:80
-        - hostname: 10.0.0.201 #test.fabricesemti.net
+        - hostname: test.fabricesemti.net
           service: hello_world
         # - hostname: chat.akchristiansen.com
         #   service: http://mattermost-team-edition.default.svc.cluster.local:8065
