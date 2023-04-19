@@ -32,20 +32,12 @@ spec:
 
       ingress:
 
-        - hostname: "hajimari.fabricesemti.net"
-          service: https://10.43.125.146:3000 #https://ingress-nginx-controller.networking
+        - hostname: httpbin.fabricesemti.net
           originRequest:
             noTLSVerify: true
+          service: http://httpbin.default:443
 
-        - hostname: "*.fabricesemti.net"
-          service: https://10.0.0.201 #https://ingress-nginx-controller.networking
-          originRequest:
-            noTLSVerify: true
-
-        - hostname: tunnel.fabricesemti.net # tunnel.example.com
-          service: http://web-service:80
-
-        - hostname: test.fabricesemti.net
+        - hostname: hello.fabricesemti.net
           service: hello_world
 
         # - hostname: chat.akchristiansen.com
