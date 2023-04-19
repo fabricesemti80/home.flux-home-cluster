@@ -28,7 +28,7 @@ spec:
     keepHistory: false
   values:
     cloudflared:
-      tunnel: b605e9b7-5647-47fc-9af4-a24904bf05d2 #? cloudflared tunnel list
+      tunnel: b605e9b7-5647-47fc-9af4-a24904bf05d2 # ? cloudflared tunnel list
 
       ingress:
 
@@ -39,6 +39,11 @@ spec:
 
         - hostname: hello.fabricesemti.net
           service: hello_world
+
+        - hostname: hajimari.fabricesemti.net
+          service: http://hajimari.default.svc.cluster.local:3000
+          originRequest:
+            noTLSVerify: true
 
         - hostname: "*.fabricesemti.net"
           service: https://ingress-nginx-controller.networking.svc.cluster.local:443
