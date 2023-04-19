@@ -30,7 +30,11 @@ spec:
     cloudflared:
       tunnel: b605e9b7-5647-47fc-9af4-a24904bf05d2 #? cloudflared tunnel list
 
+      originRequest:
+        noTLSVerify: true
+
       ingress:
+        - service: https://ingress-nginx-controller.ingress-nginx.svc.cluster.local:443
 
         - hostname: httpbin.fabricesemti.net
           originRequest:
