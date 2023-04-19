@@ -31,6 +31,12 @@ spec:
       tunnel: b605e9b7-5647-47fc-9af4-a24904bf05d2 #? cloudflared tunnel list
 
       ingress:
+
+        - hostname: "hajimari.fabricesemti.net"
+          service: https://10.43.125.146:3000 #https://ingress-nginx-controller.networking
+          originRequest:
+            noTLSVerify: true
+
         - hostname: "*.fabricesemti.net"
           service: https://10.0.0.201 #https://ingress-nginx-controller.networking
           originRequest:
