@@ -33,3 +33,35 @@ Follow the instructions [here](https://one.dash.cloudflare.com/1443fe12026b33d56
 
 Follow the instructions [here](https://one.dash.cloudflare.com/1443fe12026b33d56dcc26a9deed0667/settings/authentication/idp/add/google)
 
+## Set up ingresses
+
+The setting up of ingresses involves two things:
+
+- create ingress rule (in `flux-home-cluster/kubernetes/apps/networking/cloudflared/app/helmrelease.yaml`)
+
+```yaml
+
+      ingress:
+          
+        - hostname: '*.${SECRET_DOMAIN}'
+          service: https://ingress-nginx-controller.networking
+          originRequest:
+            noTLSVerify: true    
+```
+
+this will re-direct all traffic for the `SECRET_DOMAIN` to the ingress controller (Nginx)
+
+- also make sure the ingress of the app is prepared (you also need to have [external-dns]() for this to automatically create the dns records)
+
+```yaml
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          # tunnel ->
+          #? https://www.reddit.com/r/kubernetes/comments/z2vogg/cloudflare_and_ingressnginx/
+          external-dns.alpha.kubernetes.io/target: <tunnel ID>.cfargotunnel.com
+          external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+          # <- tunnel
+```          
