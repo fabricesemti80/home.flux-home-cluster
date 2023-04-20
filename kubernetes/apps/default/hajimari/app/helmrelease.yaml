@@ -47,7 +47,7 @@ spec:
         annotations:
           # tunnel ->
           #? https://www.reddit.com/r/kubernetes/comments/z2vogg/cloudflare_and_ingressnginx/
-          external-dns.alpha.kubernetes.io/target: b605e9b7-5647-47fc-9af4-a24904bf05d2.cfargotunnel.com
+          external-dns.alpha.kubernetes.io/target: "${SECRET_TUNNEL_ID}.cfargotunnel.com"
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
           # <- tunnel
           nginx.ingress.kubernetes.io/whitelist-source-range: |

@@ -28,22 +28,19 @@ spec:
     keepHistory: false
   values:
     cloudflared:
-      tunnel: b605e9b7-5647-47fc-9af4-a24904bf05d2 # ? cloudflared tunnel list
+      tunnel: "${SECRET_TUNNEL_ID}" # ? cloudflared tunnel list
 
       ingress:
 
-        - hostname: httpbin.fabricesemti.net
+        - hostname: "httpbin.${SECRET_DOMAIN}"
           service: http://httpbin.default:443
 
-        - hostname: hello.fabricesemti.net
+        - hostname: "hello.${SECRET_DOMAIN}"
           service: hello_world
 
-        # - hostname: hajimari.fabricesemti.net
-          # service: http://hajimari.default.svc.cluster.local:3000
-          
         - hostname: '*.${SECRET_DOMAIN}'
           service: https://ingress-nginx-controller.networking
           originRequest:
-            noTLSVerify: true          
+            noTLSVerify: true
 
         - service: http_status:404
