@@ -40,5 +40,10 @@ spec:
 
         - hostname: hajimari.fabricesemti.net
           service: http://hajimari.default.svc.cluster.local:3000
+          
+        - hostname: '*.${SECRET_DOMAIN}'
+          service: https://ingress-nginx-controller.networking
+          originRequest:
+            noTLSVerify: true          
 
         - service: http_status:404
