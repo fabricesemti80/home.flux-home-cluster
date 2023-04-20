@@ -28,7 +28,7 @@ spec:
     keepHistory: false
   values:
     cloudflared:
-      tunnel: "${SECRET_TUNNEL_ID}" # ? cloudflared tunnel list
+      tunnel: k8s-tunnel # ? cloudflared tunnel list
 
       ingress:
 
