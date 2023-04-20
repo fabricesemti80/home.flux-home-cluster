@@ -2,9 +2,15 @@
 
 ## setting up cloudflared
 
+blabla
+
 ## create tunnel
 
+blabla
+
 ## configure cloudflare tunnel
+
+blabla
 
 ## secure cloudflare tunnel
 
@@ -16,8 +22,6 @@ Set up a policy that allows access to the appllication. For this go to `Access >
 
 Then go to `Settings [left hand side] > Authentication > Add new > [Application name] > Configure` and add *all* the emails 
 (be aware: Github and Google can use different ones; use the *test* on the authentication, to find out what the authentication sends!) that needs to access the application(s)
-
-#### Google
 
 ### Identity provider side
 
