@@ -87,3 +87,9 @@ this will re-direct all traffic for the `SECRET_DOMAIN` to the ingress controlle
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
           # <- tunnel
 ```
+
+## 🔧 Alterations / misc
+
+### GitOps
+
+Password hashed with <https://bcrypt.online/> and stored in Bitwarden
