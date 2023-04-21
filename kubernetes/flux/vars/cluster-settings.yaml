@@ -10,3 +10,7 @@ data:
   METALLB_LB_RANGE: "10.0.0.200-10.0.0.220"
   METALLB_K8S_GATEWAY_ADDR: "10.0.0.200"
   METALLB_INGRESS_ADDR: "10.0.0.201"
+  # Storage [NAS] settings
+  NAS_SERVER: 10.0.0.2
+  NAS_PATH_MEDIA: /PersistentVolumeClaims/Media
+  NAS_PATH_MINIO: /PersistentVolumeClaims/MiniIO
