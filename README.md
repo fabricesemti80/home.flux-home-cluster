@@ -1,7 +1,7 @@
 
 <img src="https://avatars.githubusercontent.com/u/61287648" align="left" width="144px" height="144px"/>
 
-#### home-infra - Home Cloud via Flux v2 | GitOps Toolkit
+#### flux-home-cluster - Home Cloud via Flux v2 | GitOps Toolkit
 > GitOps state for my cluster using flux v2
 
 [![Discord](https://img.shields.io/badge/discord-chat-7289DA.svg?maxAge=60&style=flat-square)](https://discord.gg/DNCynrJ)
