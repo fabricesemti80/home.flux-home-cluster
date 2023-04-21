@@ -30,16 +30,18 @@ spec:
       title: Apps
       darkTheme: espresso
       alwaysTargetBlank: true
-      showGreeting: false
-      showAppGroups: false
-      showAppStatus: false
-      showBookmarkGroups: false
-      showGlobalBookmarks: false
+      showGreeting: true
+      name:Fabrice 
+      showAppGroups: true
+      showAppStatus: true
+      showBookmarkGroups: true
+      showGlobalBookmarks: true
       showAppUrls: false
       defaultEnable: true
       namespaceSelector:
         matchNames:
           - default
+          - flux-system 
     ingress:
       main:
         enabled: true
