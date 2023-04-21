@@ -1,4 +1,16 @@
 
+<img src="https://avatars.githubusercontent.com/u/61287648" align="left" width="144px" height="144px"/>
+
+#### home-infra - Home Cloud via Flux v2 | GitOps Toolkit
+> GitOps state for my cluster using flux v2
+
+[![Discord](https://img.shields.io/badge/discord-chat-7289DA.svg?maxAge=60&style=flat-square)](https://discord.gg/DNCynrJ)
+[![k8s](https://img.shields.io/badge/k8s-v1.26.3-orange?style=flat-square)](https://k8s.io/)
+<!-- [![talos](https://img.shields.io/badge/talos-v1.4.0-yellow?style=flat-square)](https://k8s.io/) -->
+[![GitHub last commit](https://img.shields.io/github/last-commit/fabricesemti80/flux-home-cluster?style=flat-square)](https://github.com/fabricesemti80/flux-home-cluster/commits/master)
+
+<br />
+
 # Post-deployment notes
 
 (For the cluster deployment please see `DEPLOYMENT.md`)
