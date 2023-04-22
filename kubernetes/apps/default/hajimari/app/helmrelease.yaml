@@ -31,7 +31,7 @@ spec:
       darkTheme: espresso
       alwaysTargetBlank: true
       showGreeting: true
-      name: Fabrice 
+      name: Fabrice
       showAppGroups: true
       showAppStatus: true
       showBookmarkGroups: true
@@ -41,7 +41,8 @@ spec:
       namespaceSelector:
         matchNames:
           - default
-          - flux-system 
+          - flux-system
+          - media
     ingress:
       main:
         enabled: true
