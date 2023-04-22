@@ -100,6 +100,13 @@ this will re-direct all traffic for the `SECRET_DOMAIN` to the ingress controlle
           # <- tunnel
 ```
 
+On Cloudflare's website then you can set up a rule to authenticate acces, via `*. <YOURDOMAIN>.COM`
+
+### Webhook acces 
+
+In order to let webhooks work, we need to set up a more specific rule:
+`flux-webhook.<YOURDOMAIN>. com/hook/*` with authentication bypass. 
+
 ## 🔧 Alterations / misc
 
 ### GitOps
