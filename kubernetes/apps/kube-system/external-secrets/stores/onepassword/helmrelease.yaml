@@ -75,9 +75,9 @@ spec:
         ingressClassName: "traefik"
         annotations:
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-          external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNEL_ID}.cfargotunnel.com"
+          external-dns.alpha.kubernetes.io/target: "${SECRET_TUNNEL_ID}.cfargotunnel.com"
         hosts:
-          - host: &host "1password.${SECRET_DOMAIN_CASA}"
+          - host: &host "1password.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
