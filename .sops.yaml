@@ -22,4 +22,21 @@ creation_rules:
     encrypted_regex: "^(data|stringData)$"
     key_groups:
       - age:
-        - age1l2ynvs6f5sug5hf5yzd3dedd4yusth2rwxg77xxllg8kgcdd2f8sw965ed-
+        - age1l2ynvs6f5sug5hf5yzd3dedd4yusth2rwxg77xxllg8kgcdd2f8sw965ed
+#
+  - path_regex: kubernetes/.*\.sops\.ini
+    key_groups:
+      - age:
+          - age1l2ynvs6f5sug5hf5yzd3dedd4yusth2rwxg77xxllg8kgcdd2f8sw965ed
+  - path_regex: kubernetes/.*\.sops\.toml
+    key_groups:
+      - age:
+          - age1l2ynvs6f5sug5hf5yzd3dedd4yusth2rwxg77xxllg8kgcdd2f8sw965ed
+  - path_regex: kubernetes/.*\.sops\.json
+    key_groups:
+      - age:
+          - age1l2ynvs6f5sug5hf5yzd3dedd4yusth2rwxg77xxllg8kgcdd2f8sw965ed
+  - path_regex: provision/.*\.sops\.ya?ml
+    key_groups:
+      - age:
+          - age1l2ynvs6f5sug5hf5yzd3dedd4yusth2rwxg77xxllg8kgcdd2f8sw965ed
