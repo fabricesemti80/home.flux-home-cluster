@@ -17,9 +17,9 @@
 
 ## 🧑‍💻 USED APPLICATIONS/TOOLS
 
-- [NFS External Provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner) 
+- [NFS External Provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner)
 
-- [Cloudflared](https://github.com/cloudflare/helm-charts) 
+- [Cloudflared](https://github.com/cloudflare/helm-charts)
 
 
 ## 🚀 CLOUDFLARED
@@ -109,12 +109,31 @@ this will re-direct all traffic for the `SECRET_DOMAIN` to the ingress controlle
 
 On Cloudflare's website then you can set up a rule to authenticate acces, via `*. <YOURDOMAIN>.COM`
 
-### Webhook acces 
+### Webhook acces
 
 In order to let webhooks work, we need to set up a more specific rule:
-`flux-webhook.<YOURDOMAIN>. com/hook/*` with authentication bypass. 
+`flux-webhook.<YOURDOMAIN>. com/hook/*` with authentication bypass.
+
+## 🔒 OnePassword
+
+- Install the [op cli](https://developer.1password.com/docs/cli/get-started/#install) following the instructions.
+- [Connect to cli](https://developer.1password.com/docs/cli/get-started/)
+- create secrets [guide](https://external-secrets.io/v0.5.7/provider-1password-automation/#deploy-a-connect-server)
+
+
 
 ## 🔧 Alterations / misc
+
+## ☁️ Cloud Dependencies
+
+While most of my infrastructure and workloads are selfhosted I do rely upon the cloud for certain key parts of my setup. This saves me from having to worry about two things. (1) Dealing with chicken/egg scenarios and (2) services I critically need whether my cluster is online or not.
+
+The alternative solution to these two problems would be to host a Kubernetes cluster in the cloud and deploy applications like [HCVault](https://www.vaultproject.io/), [Vaultwarden](https://github.com/dani-garcia/vaultwarden), [ntfy](https://ntfy.sh/), and [Gatus](https://gatus.io/). However, maintaining another cluster and monitoring another group of workloads is a lot more time and effort than I am willing to put in.
+
+| Service                                         | Use                                                               |
+|-------------------------------------------------|-------------------------------------------------------------------|
+| [1Password](https://1password.com/)             | Secrets with [External Secrets](https://external-secrets.io/)     |
+| [Cloudflare](https://www.cloudflare.com/)       | Domain, DNS and proxy management                                  |
 
 ### GitOps
 
