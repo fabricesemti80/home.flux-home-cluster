@@ -15,4 +15,5 @@ resources:
   - ./stakater.yaml
   - ./weave-gitops.yaml
   - ./cloudflared.yaml
+  - ./1password-charts.yaml
   - ./external-secrets.yaml

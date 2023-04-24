@@ -1,0 +1,32 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: onepassword-connect
+  namespace: security
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: connect
+      # renovate: registryUrl=https://1password.github.io/connect-helm-charts
+      version: 1.10.0
+      interval: 30m
+      sourceRef:
+        kind: HelmRepository
+        name: 1password-charts
+        namespace: flux-system
+  values:
+    ingress:
+      enabled: true
+      labels: {}
+      annotations: {}
+      ingressClassName: "nginx"
+      pathType: Prefix
+      hosts:
+        - host: &host "onepassword-connect.${SECRET_DOMAIN}"
+          paths:
+            - path: /
+      tls:
+        - hosts:
+            - *host
