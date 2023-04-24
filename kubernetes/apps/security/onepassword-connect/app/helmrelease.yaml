@@ -20,8 +20,10 @@ spec:
     ingress:
       enabled: true
       labels: {}
-      annotations: {}
       ingressClassName: "nginx"
+      annotations:
+        external-dns.alpha.kubernetes.io/target: "${SECRET_TUNNEL_ID}.cfargotunnel.com" #"ipv4.${SECRET_DOMAIN}"
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
       pathType: Prefix
       hosts:
         - host: &host "onepassword-connect.${SECRET_DOMAIN}"
