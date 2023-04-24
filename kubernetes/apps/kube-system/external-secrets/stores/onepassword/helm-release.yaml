@@ -1,5 +1,4 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -13,7 +12,7 @@ spec:
       version: 1.4.0
       sourceRef:
         kind: HelmRepository
-        name: bjw-s
+        name: bjw-s-charts
         namespace: flux-system
   maxHistory: 3
   install:
@@ -31,7 +30,6 @@ spec:
       annotations:
         reloader.stakater.com/auto: "true"
     image:
-      # https://github.com/1Password/connect/issues/56
       repository: docker.io/1password/connect-api
       tag: 1.6.1
     env:
@@ -72,12 +70,11 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: "traefik"
+        ingressClassName: nginx
         annotations:
-          external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-          external-dns.alpha.kubernetes.io/target: "${SECRET_TUNNEL_ID}.cfargotunnel.com"
+          hajimari.io/enable: "false"
         hosts:
-          - host: &host "1password.${SECRET_DOMAIN}"
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
@@ -98,30 +95,3 @@ spec:
         memory: 10Mi
       limits:
         memory: 100Mi
-    sidecars:
-      sync:
-        image: docker.io/1password/connect-sync:1.6.1
-        imagePullPolicy: IfNotPresent
-        env:
-          - { name: OP_HTTP_PORT, value: &port 8081 }
-          - { name: OP_BUS_PORT, value: "11221" }
-          - { name: OP_BUS_PEERS, value: "localhost:11220" }
-          - name: OP_SESSION
-            valueFrom:
-              secretKeyRef:
-                name: onepassword-connect-secret
-                key: 1password-credentials.json
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: *port
-          initialDelaySeconds: 15
-        livenessProbe:
-          httpGet:
-            path: /heartbeat
-            port: *port
-          failureThreshold: 3
-          periodSeconds: 30
-          initialDelaySeconds: 15
-        volumeMounts:
-          - { name: shared, mountPath: /home/opuser/.op/data }
