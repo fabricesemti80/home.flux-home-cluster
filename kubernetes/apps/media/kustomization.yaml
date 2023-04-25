@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - ./prowlarr/ks.yaml
-  # - plex
+  - ./plex/ks.yaml
