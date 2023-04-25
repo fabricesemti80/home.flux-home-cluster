@@ -76,7 +76,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: plex-local-data
+        existingClaim: plex-nfs-data
       # media:
       #   enabled: true
       #   existingClaim: nfs-media-pvc
