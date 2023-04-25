@@ -38,6 +38,8 @@ spec:
       className: nginx
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-staging
+        external-dns.alpha.kubernetes.io/target: "${SECRET_TUNNEL_ID}.cfargotunnel.com" #"ipv4.${SECRET_DOMAIN}"
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"        
         hajimari.io/icon: mdi:kubernetes
       hosts:
         - &host "kubernetes.${SECRET_DOMAIN}"
