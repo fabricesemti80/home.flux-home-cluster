@@ -14,3 +14,5 @@ data:
   NAS_SERVER: 10.0.0.2
   NAS_PATH_MEDIA: /PersistentVolumeClaims/Media
   NAS_PATH_MINIO: /PersistentVolumeClaims/MiniIO
+  PUID: "1000"
+  PGID: "1000"

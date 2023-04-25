@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prowlarr-nfs-data
+  namespace: media
+  # annotations:
+  #   volumeType: local
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: hdd-nfs-storage #local-path
+  resources:
+    requests:
+      storage: 10Gi
