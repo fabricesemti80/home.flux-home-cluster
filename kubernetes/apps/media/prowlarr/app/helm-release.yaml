@@ -71,9 +71,9 @@ spec:
       config:
         enabled: true
         existingClaim: prowlarr-nfs-data
-      media:
-        enabled: true
-        existingClaim: nfs-media-pvc
+      # media:
+      #   enabled: true
+      #   existingClaim: nfs-media-pvc
     prometheus:
       podMonitor:
         enabled: true
