@@ -29,6 +29,8 @@ spec:
       VERSION: "docker"
       PUID: "${PUID}"
       PGID: "${PUID}"
+      ADVERTISE_IP: "http://${SVC_PLEX_IP}:32400/,https://plex.${SECRET_DOMAIN}"
+      PLEX_CLAIM: "${SECRET_PLEX_CLAIM_TOKEN}"
 
     service:
       main:
