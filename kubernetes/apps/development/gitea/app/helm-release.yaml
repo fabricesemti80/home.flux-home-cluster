@@ -24,7 +24,7 @@ spec:
 
     persistence:
       enabled: true
-      existingClaim: gitea-local-data
+      existingClaim: gitea-nfs-data
 
     ingress:
       enabled: true
