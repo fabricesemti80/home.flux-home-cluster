@@ -90,7 +90,8 @@ spec:
           REQUIRE_SIGNIN_VIEW: false
         database:
           DB_TYPE: postgres
-          HOST: postgres-rw.development.svc.cluster.local:5432
+          HOST: postgres-rw:5432
+          # HOST: postgres-rw.development.svc.cluster.local:5432
           NAME: gitea
           USER: gitea
           SCHEMA: public
