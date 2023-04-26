@@ -19,3 +19,4 @@ data:
   PGID: "1000"
   # Media settings
   SVC_PLEX_IP: 10.0.0.202
+  SVC_GITEA_IP: 10.0.0.203
