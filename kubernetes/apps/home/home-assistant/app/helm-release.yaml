@@ -1,0 +1,84 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: home-assistant
+  namespace: home
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=http://bjw-s.github.io/helm-charts/
+      chart: app-template
+      version: 1.4.0
+      interval: 30m
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  values:
+    initContainers:
+      01-init-db:
+        image: ghcr.io/onedr0p/postgres-initdb:14.7
+        imagePullPolicy: IfNotPresent
+        envFrom:
+          - secretRef:
+              name: homeassistant-secrets
+    podAnnotations:
+      configmap.reloader.stakater.com/reload: "hass-config"
+      secret.reloader.stakater.com/reload: "homeassistant-secrets"
+      k8s.v1.cni.cncf.io/networks: static-iot-hass
+    image:
+      repository: homeassistant/home-assistant
+      tag: 2023.4.6
+    env:
+      TZ: "${TIMEZONE}"
+    envFrom:
+      - secretRef:
+          name: homeassistant-secrets
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+      startup:
+        enabled: false
+    service:
+      main:
+        ports:
+          http:
+            port: 8123
+          mdns-tcp:
+            enabled: true
+            port: 5353
+            protocol: TCP
+            targetPort: 5353
+          mdns-udp:
+            enabled: true
+            port: 5353
+            protocol: UDP
+            targetPort: 5353
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: "nginx"
+        annotations:
+          nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
+        hosts:
+          - host: &host hass.${SECRET_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - *host
+    persistence:
+      config:
+        enabled: true
+        existingClaim: hass-local-data
+      hass-config:
+        enabled: true
+        type: configMap
+        name: hass-config
+        mountPath: /config/configuration.yaml
+        subPath: configuration.yaml
