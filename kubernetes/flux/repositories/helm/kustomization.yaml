@@ -17,3 +17,4 @@ resources:
   - ./cloudflared.yaml
   - ./1password-charts.yaml
   - ./external-secrets.yaml
+  - ./cloudnative-pg.yaml

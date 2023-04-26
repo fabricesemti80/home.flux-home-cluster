@@ -31,8 +31,8 @@ spec:
       wal:
         compression: bzip2
         maxParallel: 8
-      destinationPath: s3://k3s-cloudnative-pg/
-      endpointURL: https://s3.us-west-002.backblazeb2.com
+      destinationPath: s3://home-ops-001/ # s3://k3s-cloudnative-pg/
+      endpointURL: https://s3.us-east-005.backblazeb2.com
       serverName: postgres
       s3Credentials:
         accessKeyId:
