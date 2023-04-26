@@ -75,7 +75,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: hass-local-data
+        existingClaim: hass-nfs-data
       hass-config:
         enabled: true
         type: configMap
