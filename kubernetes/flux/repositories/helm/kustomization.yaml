@@ -17,4 +17,5 @@ resources:
   - ./cloudflared.yaml
   - ./1password-charts.yaml
   - ./external-secrets.yaml
+  - ./gitea-charts.yaml
   - ./cloudnative-pg.yaml
