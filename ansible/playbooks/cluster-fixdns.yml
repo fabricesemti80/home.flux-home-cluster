@@ -6,9 +6,21 @@
   gather_facts: true
   any_errors_fatal: true
   roles:
+
     - role: "ahuffman.resolv"
       resolv_nameservers:
         - "127.0.0.53"
       resolv_search: []
       resolv_options:
         - "edns0 trust-ad"
+        -
+  tasks:
+
+    - name: "Read a file content"
+      shell: |
+        cat /etc/resolv.conf
+      register: file_content
+
+    - name: "Print the file content to a console"
+      debug:
+        msg: "{{ file_content.stdout }}"
