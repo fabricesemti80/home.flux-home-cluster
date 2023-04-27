@@ -5,6 +5,11 @@ metadata:
   name: home-assistant
   namespace: home
 spec:
+  dnsConfig:
+    options:
+      - name: ndots
+        value: "2"
+      - name: edns0
   interval: 5m
   chart:
     spec:
@@ -24,11 +29,6 @@ spec:
         envFrom:
           - secretRef:
               name: homeassistant-secrets
-        dnsConfig:
-          options:
-            - name: ndots
-              value: "2"
-            - name: edns0
     podAnnotations:
       configmap.reloader.stakater.com/reload: "hass-config"
       secret.reloader.stakater.com/reload: "homeassistant-secrets"
