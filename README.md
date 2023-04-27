@@ -149,6 +149,10 @@ $  op connect token create Kubernetes --server Kubernetes --vaults Kubernetes
 
 ## 🔧 Alterations / misc
 
+### Test internal dns
+
+<https://help.hcltechsw.com/connections/v6/admin/install/cp_prereq_kubernetes_dns.html>
+
 ## ☁️ Cloud Dependencies
 
 While most of my infrastructure and workloads are selfhosted I do rely upon the cloud for certain key parts of my setup. This saves me from having to worry about two things. (1) Dealing with chicken/egg scenarios and (2) services I critically need whether my cluster is online or not.
