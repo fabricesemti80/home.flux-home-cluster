@@ -5,13 +5,10 @@
   become: true
   gather_facts: true
   any_errors_fatal: true
-  # pre_tasks:
-  #   - name: Pausing for 5 seconds...
-  #     ansible.builtin.pause:
-  #       seconds: 5
-  tasks:
-    - name: Remove search domain from resolv.conf
-      replace:
-        path: /etc/resolv.conf
-        regexp: '^search .*'
-        replace: ''
+  roles:
+    - role: "ahuffman.resolv"
+      resolv_nameservers:
+        - "127.0.0.53"
+      resolv_search: []
+      resolv_options:
+        - "edns0 trust-ad"
