@@ -13,8 +13,8 @@ spec:
         - "3600"
       imagePullPolicy: IfNotPresent
   restartPolicy: Always
-  dnsConfig:
-    options:
-      - name: ndots
-        value: "2"
-      - name: edns0
+  # dnsConfig:
+  #   options:
+  #     - name: ndots
+  #       value: "2"
+  #     - name: edns0
