@@ -37,7 +37,7 @@ spec:
       - secretRef:
           name: homeassistant-secrets
     # ! https://discord.com/channels/673534664354430999/1101046721703845922/1101046721703845922
-    # dnsPolicy: ClusterFirstWithHostNet
+    dnsPolicy: ClusterFirstWithHostNet
     dnsConfig:
       options:
         - name: ndots
