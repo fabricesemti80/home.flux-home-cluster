@@ -1,20 +1,25 @@
 # Homeassitant
 
-Create db and user
+Create db user
 
 ```sh
-postgres@postgres-1:/$ pgsql
-bash: pgsql: command not found
+
 postgres@postgres-1:/$ psql
-psql (14.7 (Debian 14.7-1.pgdg110+1))
-Type "help" for help.
+# psql (14.7 (Debian 14.7-1.pgdg110+1))
+# Type "help" for help.
 
 postgres=# CREATE USER homeassistant WITH PASSWORD '<password from 1password>';
 CREATE ROLE
-postgres=# CREATE DATABASE homeassistant_db WITH OWNER homeassistant ENCODING 'utf8' TEMPLATE template0;
-CREATE DATABASE
+
 postgres=#
 ```
+
+- Ensure the `super user password` == `POSTGRES_SUPER_PASS`
+- Ensure the created user name == `POSTGRES_USER`
+- Ensure the created user password == `POSTGRES_PASS`
+(these values should come from the `hass` secret in 1Password!)
+
+With above, the db should be created by the deployment's `init-db` container.
 
 ## References
 

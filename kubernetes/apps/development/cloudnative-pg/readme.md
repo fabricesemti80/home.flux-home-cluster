@@ -14,29 +14,28 @@ $ kubectl exec -n development --stdin --tty postgres-1 -- /bin/bash
 
 $ postgres=#
 ```
-<!-- ***or**
 
-Find your cluster
+Set password of the default user (password is in `cloudnative-pg` secret in 1Password)
 
 ```sh
-kubectl get Cluster
-NAME       AGE   INSTANCES   READY   STATUS                     PRIMARY
-postgres   11h   3           3       Cluster in healthy state   postgres-1
+# postgres@postgres-1:/$ psql
+# psql (14.7 (Debian 14.7-1.pgdg110+1))
+# Type "help" for help.
+
+postgres=# sudo -u postgres psql postgres
+postgres-# \password postgres
+# Enter new password for user "postgres":
+# Enter it again:
+# postgres-#
 ```
-
-Install the plugin (see next section)
-
-Connect to the cluster
-
-```sh
-``` -->
 
 ### Plugin for kubectl
 
-[cnpg](https://github.com/EnterpriseDB/kubectl-cnp)
 
 ## useful things
 
 - [init container](https://github.com/onedr0p/containers/tree/6c64f4a240468fee32f78bf171549058632ffbb6/apps/postgres-initdb)
 
 - [cheat sheet](https://postgrescheatsheet.com/#/databases)
+
+- [reset sa pw](https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install)
