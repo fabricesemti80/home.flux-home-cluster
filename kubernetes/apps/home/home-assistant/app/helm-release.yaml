@@ -70,7 +70,7 @@ spec:
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
           # <- tunnel
           nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
-          hajimari.io/icon: home-analytics
+          hajimari.io/icon: mdi:home-assistant
         hosts:
           - host: &host hass.${SECRET_DOMAIN}
             paths:
