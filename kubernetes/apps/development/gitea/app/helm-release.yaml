@@ -95,7 +95,7 @@ spec:
           NAME: gitea
           USER: gitea
           SCHEMA: public
-    memcached:
-      enabled: false
+    # memcached:
+    #   enabled: false
     postgresql:
       enabled: false
