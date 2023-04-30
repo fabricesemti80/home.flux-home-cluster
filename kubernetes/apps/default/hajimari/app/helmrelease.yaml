@@ -39,13 +39,15 @@ spec:
       showAppUrls: false
       defaultEnable: true
       namespaceSelector:
-        matchNames:
-          - default
-          - flux-system
-          - media
-          - monitoring
-          - home
-          - "*"
+
+        any: true
+
+        # matchNames:
+        #   - default
+        #   - flux-system
+        #   - media
+        #   - monitoring
+        #   - home
     ingress:
       main:
         enabled: true
