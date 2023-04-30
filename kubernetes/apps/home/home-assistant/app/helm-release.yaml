@@ -37,13 +37,6 @@ spec:
       - secretRef:
           name: homeassistant-secrets
 
-    # # ! https://discord.com/channels/673534664354430999/1101046721703845922/1101046721703845922
-    # dnsPolicy: ClusterFirstWithHostNet
-    # dnsConfig:
-    #   options:
-    #     - name: ndots
-    #       value: "1"
-
     probes:
       liveness:
         enabled: false
@@ -77,6 +70,7 @@ spec:
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
           # <- tunnel
           nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
+          hajimari.io/icon: home-analytics
         hosts:
           - host: &host hass.${SECRET_DOMAIN}
             paths:
