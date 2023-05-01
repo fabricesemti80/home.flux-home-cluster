@@ -34,10 +34,10 @@ homeassistant:
   #   recordings: "/mnt/recordings"
   # legacy_templates: false
 
-updater:
-  include_used_components: true
-system_health:
-stream:
+# updater:
+#   include_used_components: true
+# system_health:
+# stream:
 
 zeroconf:
 
