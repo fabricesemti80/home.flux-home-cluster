@@ -6,6 +6,7 @@ metadata:
   namespace: development
 spec:
   type: LoadBalancer
+  loadBalancerIP: ${SVC_CNPG_IP}
   externalTrafficPolicy: Local
   ports:
     - name: postgres

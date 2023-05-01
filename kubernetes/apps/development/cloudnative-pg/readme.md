@@ -2,17 +2,20 @@
 
 ## connect to psql
 
-- log in to the pod:
+- find the load balanced IP and connect to it (requieres <https://www.postgresql.org/docs/current/app-psql.html>)
 
 ```sh
-$ kubectl exec -n development --stdin --tty postgres-1 -- /bin/bash
-# Defaulted container "postgres" out of: postgres, bootstrap-controller (init)
+❯ kubectl get service -n development postgres-lb
+# NAME          TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE
+# postgres-lb   LoadBalancer   10.43.174.5   10.0.0.202    5432:30993/TCP   2d
 
-# postgres@postgres-1:/$ psql
-# psql (14.7 (Debian 14.7-1.pgdg110+1))
+
+❯ psql "sslmode=disable dbname=postgres user=postgres hostaddr=10.0.0.202"
+# Password for user postgres:
+# psql (14.7 (Ubuntu 14.7-0ubuntu0.22.04.1))
 # Type "help" for help.
 
-$ postgres=#
+# postgres=#
 ```
 
 Set password of the default user (password is in `cloudnative-pg` secret in 1Password)

@@ -22,5 +22,6 @@ data:
   PGID: "1000"
 
   # Service addresses
-  SVC_PLEX_IP: 10.0.0.202
+  SVC_CNPG_IP: 10.0.0.202
   SVC_GITEA_IP: 10.0.0.203
+  SVC_HASS_IP: 10.0.0.204
