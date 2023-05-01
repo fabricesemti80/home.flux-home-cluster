@@ -5,5 +5,7 @@ metadata:
   name: home
   labels:
     kustomize.toolkit.fluxcd.io/prune: disabled
+    # https://fluxcd.io/flux/faq/#how-to-patch-coredns-and-other-pre-installed-addons
+    kustomize.toolkit.fluxcd.io/ssa: merge
   annotations:
     volsync.backube/privileged-movers: "true"
