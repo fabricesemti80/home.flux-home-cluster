@@ -83,14 +83,14 @@ spec:
       config:
         enabled: true
         existingClaim: hass-nfs-data
-      media:
-        enabled: true
-        type: custom
-        volumeSpec:
-          nfs:
-            server: "${NAS_SERVER}"
-            path: "${NAS_PATH_MEDIA}"
-        mountPath: /media
+      # media:
+      #   enabled: true
+      #   type: custom
+      #   volumeSpec:
+      #     nfs:
+      #       server: "${NAS_SERVER}"
+      #       path: "${NAS_PATH_MEDIA}"
+      #   mountPath: /media
       hass-config:
         enabled: true
         type: configMap
