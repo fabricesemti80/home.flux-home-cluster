@@ -87,7 +87,7 @@ spec:
           PASSWORD_COMPLEXITY: "lower,upper"
           MIN_PASSWORD_LENGTH: 12
         service:
-          DISABLE_REGISTRATION: true
+          DISABLE_REGISTRATION: false
           REQUIRE_SIGNIN_VIEW: false
         database:
           DB_TYPE: postgres
