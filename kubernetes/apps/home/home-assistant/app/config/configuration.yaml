@@ -19,6 +19,29 @@ http:
     - 127.0.0.1
     - ::1
 
+homeassistant:
+  name: Casa de Fabrice
+  latitude: !env_var LATITUDE
+  longitude: !env_var LONGITUDE
+  elevation: 141
+  unit_system: metric
+  currency: GBP # https://en.wikipedia.org/wiki/ISO_4217#Active_codes
+  country: GB # https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
+  temperature_unit: C
+  time_zone: "Europe/London"
+  external_url: "https://hass.fabricesemti.net/"
+  # internal_url: "http://homeassistant.local:8123"
+  # allowlist_external_dirs:
+  #   - "/usr/var/dumping-ground"
+  #   - "/tmp"
+  # allowlist_external_urls:
+  #   - "http://images.com/image1.png"
+  # media_dirs:
+  #   media: "/media"
+  #   recordings: "/mnt/recordings"
+  # legacy_templates: false
+
+
 # camera:
 #   - platform: xiaomi_cloud_map_extractor
 #     host: 10.3.0.2

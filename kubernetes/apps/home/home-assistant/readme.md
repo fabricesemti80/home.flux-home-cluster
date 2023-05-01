@@ -21,6 +21,13 @@ postgres=#
 
 With above, the db should be created by the deployment's `init-db` container.
 
+## Configuration
+
+
 ## References
 
 <https://sigfried.be/blog/migrating-home-assistant-sqlite-to-postgresql/>
+
+<https://www.home-assistant.io/examples/>
+
+<https://www.home-assistant.io/docs/configuration/>
