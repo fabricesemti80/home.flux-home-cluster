@@ -30,6 +30,7 @@ spec:
       enabled: true
       className: "nginx"
       annotations:
+        hajimari.io/icon: git        
         # tunnel ->
         #? https://www.reddit.com/r/kubernetes/comments/z2vogg/cloudflare_and_ingressnginx/
         external-dns.alpha.kubernetes.io/target: "${SECRET_TUNNEL_ID}.cfargotunnel.com" #"ipv4.${SECRET_DOMAIN}"
