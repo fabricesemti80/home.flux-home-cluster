@@ -25,8 +25,8 @@ homeassistant:
   country: GB # https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
   temperature_unit: C
   time_zone: "Europe/London"
-  # external_url: "https://hass.fabricesemti.net/"
-  # internal_url: "http://homeassistant.local:8123"
+  external_url: "https://hass.fabricesemti.net/"
+  internal_url: "http://10.0.0.204:8123"
   # allowlist_external_dirs:
   #   - "/usr/var/dumping-ground"
   #   - "/tmp"
