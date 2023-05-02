@@ -13,10 +13,7 @@ http:
     - ::1
 
 homeassistant:
-  name: Casa de Fabrice
-  latitude: !env_var LATITUDE
-  longitude: !env_var LONGITUDE
-  elevation: 141
+
   unit_system: metric
   currency: GBP # https://en.wikipedia.org/wiki/ISO_4217#Active_codes
   country: GB # https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
@@ -42,6 +39,15 @@ system_health:
 zeroconf:
 
 zone:
+# https://www.home-assistant.io/integrations/zone/
+  - name: Home
+    name: Casa de Fabrice
+    latitude: !env_var LATITUDE
+    longitude: !env_var LONGITUDE
+    elevation: 141
+    radius: 100
+    icon: mdi:castle
+    
   - name: Work
     latitude: !env_var WORK_LATITUDE
     longitude: !env_var WORK_LONGITUDE
