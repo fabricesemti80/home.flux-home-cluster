@@ -41,6 +41,13 @@ system_health:
 
 zeroconf:
 
+zone:
+  - name: Work
+    latitude: !env_var WORK_LATITUDE
+    longitude: !env_var WORK_LONGITUDE
+    radius: 100
+    icon: mdi:briefcase 
+
 # camera:
 #   - platform: xiaomi_cloud_map_extractor
 #     host: 10.3.0.2
