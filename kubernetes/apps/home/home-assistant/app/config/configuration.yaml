@@ -41,7 +41,6 @@ zeroconf:
 zone:
 # https://www.home-assistant.io/integrations/zone/
   - name: Home
-    name: Casa de Fabrice
     latitude: !env_var LATITUDE
     longitude: !env_var LONGITUDE
     elevation: 141
