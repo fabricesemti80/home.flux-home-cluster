@@ -17,8 +17,7 @@ homeassistant:
   latitude: !env_var LATITUDE
   longitude: !env_var LONGITUDE
   elevation: 141
-  icon: mdi:castle
-  
+  # icon: mdi:castle  
   unit_system: metric
   currency: GBP # https://en.wikipedia.org/wiki/ISO_4217#Active_codes
   country: GB # https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
