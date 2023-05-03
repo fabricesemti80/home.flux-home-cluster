@@ -42,13 +42,11 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          hajimari.io/enable: "false"
-          # external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
-          # tunnel ->
-          #? https://www.reddit.com/r/kubernetes/comments/z2vogg/cloudflare_and_ingressnginx/
-          external-dns.alpha.kubernetes.io/target: "${SECRET_TUNNEL_ID}.cfargotunnel.com" #"ipv4.${SECRET_DOMAIN}"
+          hajimari.io/enable: "true"
+          #& tunnel ->
+          external-dns.alpha.kubernetes.io/target: "${SECRET_TUNNEL_ID}.cfargotunnel.com"
+          #& <- tunnel
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-          # <- tunnel
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
