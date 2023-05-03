@@ -49,6 +49,8 @@ Follow the instructions [here](https://one.dash.cloudflare.com/1443fe12026b33d56
 
 ### Set up ingresses
 
+<https://www.reddit.com/r/kubernetes/comments/z2vogg/cloudflare_and_ingressnginx>
+
 The setting up of ingresses involves two things:
 
 - create ingress rule (in `flux-home-cluster/kubernetes/apps/networking/cloudflared/app/helmrelease.yaml`)
