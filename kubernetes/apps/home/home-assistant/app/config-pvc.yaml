@@ -4,12 +4,10 @@ kind: PersistentVolumeClaim
 metadata:
   name: hass-nfs-data
   namespace: home
-  # annotations:
-  #   volumeType: local
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: hdd-nfs-storage # local-path
+  storageClassName: hdd-nfs-storage
   resources:
     requests:
       storage: 2Gi

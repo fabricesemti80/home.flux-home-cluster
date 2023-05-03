@@ -28,7 +28,8 @@ spec:
   values:
     hajimari:
       title: Apps
-      darkTheme: espresso
+      lightTheme: gazette
+      darkTheme: tron
       alwaysTargetBlank: true
       showGreeting: true
       name: Fabrice
@@ -39,25 +40,16 @@ spec:
       showAppUrls: false
       defaultEnable: true
       namespaceSelector:
-
         any: true
-
-        # matchNames:
-        #   - default
-        #   - flux-system
-        #   - media
-        #   - monitoring
-        #   - home
     ingress:
       main:
         enabled: true
         ingressClassName: nginx
         annotations:
-          # tunnel ->
-          #? https://www.reddit.com/r/kubernetes/comments/z2vogg/cloudflare_and_ingressnginx/
-          external-dns.alpha.kubernetes.io/target: "${SECRET_TUNNEL_ID}.cfargotunnel.com" #"ipv4.${SECRET_DOMAIN}"
+          #& tunnel ->
+          external-dns.alpha.kubernetes.io/target: "${SECRET_TUNNEL_ID}.cfargotunnel.com"
+          #& <- tunnel
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-          # <- tunnel
           nginx.ingress.kubernetes.io/whitelist-source-range: |
             10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
           hajimari.io/enable: "false"
